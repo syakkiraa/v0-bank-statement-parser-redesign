@@ -30,9 +30,20 @@ export function HeroSection({ onGetStarted }: HeroSectionProps) {
             Now supporting 15+ Malaysian banks
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 text-balance">
-            Turn Bank Statements Into Clear Financial Insights
-          </h1>
+          <div className="relative">
+            {/* Subtle teal glow behind headline */}
+            <div 
+              className="absolute inset-0 -inset-x-8 -inset-y-4 pointer-events-none"
+              style={{
+                background: "radial-gradient(ellipse 60% 50% at 50% 50%, hsl(170 50% 45% / 0.15) 0%, hsl(170 50% 45% / 0.08) 30%, hsl(170 50% 45% / 0.02) 60%, transparent 80%)",
+                filter: "blur(20px)",
+              }}
+              aria-hidden="true"
+            />
+            <h1 className="relative text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 text-balance">
+              Turn Bank Statements Into Clear Financial Insights
+            </h1>
+          </div>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-pretty">
             Upload your bank statement PDFs and instantly extract structured transaction data. 
