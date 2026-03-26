@@ -19,23 +19,33 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="flex h-8 w-8 items-center justify-center">
             <svg
-              viewBox="0 0 24 24"
+              viewBox="0 0 32 32"
               fill="none"
-              className="h-5 w-5 text-primary-foreground"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              className="h-8 w-8"
             >
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
+              {/* Geometric leaf/petal logo */}
+              <path
+                d="M16 4C16 4 8 8 8 16C8 20.4183 11.5817 24 16 24C16 24 16 16 16 4Z"
+                className="fill-primary"
+              />
+              <path
+                d="M16 4C16 4 24 8 24 16C24 20.4183 20.4183 24 16 24C16 24 16 16 16 4Z"
+                className="fill-primary/70"
+              />
+              <path
+                d="M16 12C16 12 12 14.5 12 19C12 21.7614 13.7909 24 16 24C16 24 16 18 16 12Z"
+                className="fill-accent"
+              />
+              <path
+                d="M16 12C16 12 20 14.5 20 19C20 21.7614 18.2091 24 16 24C16 24 16 18 16 12Z"
+                className="fill-accent/70"
+              />
             </svg>
           </div>
-          <span className="text-xl font-semibold text-foreground">Kredit Lab</span>
+          <span className="text-xl font-semibold tracking-tight text-foreground">Kredit Lab</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
