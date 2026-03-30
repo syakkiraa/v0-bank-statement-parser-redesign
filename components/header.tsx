@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -19,33 +20,25 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center">
-            <svg
-              viewBox="0 0 32 32"
-              fill="none"
-              className="h-8 w-8"
-            >
-              {/* Geometric leaf/petal logo */}
-              <path
-                d="M16 4C16 4 8 8 8 16C8 20.4183 11.5817 24 16 24C16 24 16 16 16 4Z"
-                className="fill-primary"
-              />
-              <path
-                d="M16 4C16 4 24 8 24 16C24 20.4183 20.4183 24 16 24C16 24 16 16 16 4Z"
-                className="fill-primary/70"
-              />
-              <path
-                d="M16 12C16 12 12 14.5 12 19C12 21.7614 13.7909 24 16 24C16 24 16 18 16 12Z"
-                className="fill-accent"
-              />
-              <path
-                d="M16 12C16 12 20 14.5 20 19C20 21.7614 18.2091 24 16 24C16 24 16 18 16 12Z"
-                className="fill-accent/70"
-              />
-            </svg>
-          </div>
-          <span className="text-xl font-semibold tracking-tight text-foreground">Kredit Lab</span>
+        <Link href="/" className="flex items-center">
+          {/* Light mode logo */}
+          <Image
+            src="/images/kredit-lab-light.png"
+            alt="Kredit Lab"
+            width={150}
+            height={40}
+            className="h-9 w-auto dark:hidden"
+            priority
+          />
+          {/* Dark mode logo */}
+          <Image
+            src="/images/kredit-lab-dark.png"
+            alt="Kredit Lab"
+            width={150}
+            height={40}
+            className="h-9 w-auto hidden dark:block"
+            priority
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
