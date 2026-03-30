@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -7,23 +8,23 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-5 w-5 text-primary-foreground"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                  <path d="M2 12l10 5 10-5" />
-                </svg>
-              </div>
-              <span className="text-xl font-semibold text-foreground">Kredit Lab</span>
+            <Link href="/" className="inline-block mb-4">
+              {/* Light mode logo */}
+              <Image
+                src="/images/kredit-lab-light.png"
+                alt="Kredit Lab"
+                width={180}
+                height={48}
+                className="h-10 w-auto dark:hidden"
+              />
+              {/* Dark mode logo */}
+              <Image
+                src="/images/kredit-lab-dark.png"
+                alt="Kredit Lab"
+                width={180}
+                height={48}
+                className="h-10 w-auto hidden dark:block"
+              />
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm mb-4 leading-relaxed">
               Transforming the way financial professionals work with bank statements. 
